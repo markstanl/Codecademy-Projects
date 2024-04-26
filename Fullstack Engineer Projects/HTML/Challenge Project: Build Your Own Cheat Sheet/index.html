@@ -1,0 +1,72 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Mark Stanley">
+  <title>Ubuntu Cheat Sheet</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+  <body>
+    <header class="navbar">
+        Ubuntu Python Helper
+    </header>
+    <div class="barrier">
+    </div>
+    <h1 id="description"> I unfortunately had to restart my ubuntu vm, and with that came needing to redo all of my flask applications. The purpose of this cheat sheet is to assist me if I need to again</h1>
+    <div class="barrier">
+    </div>
+    <div class="code">
+      sudo apt update
+    </div>
+    <div class="code">
+      sudo apt install python3
+    </div>
+    <div class="description">
+      To start off, simply update and install python
+    </div>
+        <div class="code">
+      sudo apt install python3-pip
+    </div>
+    <div class="code">
+      sudo apt install python3-venv
+    </div>
+    <div class="description">
+      Next, install pip and venv
+    </div>
+    <div class="code">
+      cd ./project/directory
+    </div>
+    <div class="description">
+      Of course, navigate into your project to start the procedure
+    </div>
+    <div class="code">
+      python3 -m venv venv
+    </div>
+    <div class="description">
+      This is how you create a virtual environment in python, necessary for doing projects. This creates a venv called venv (the second parameter). You can change the name, just replace further references of it to your different name
+    </div>
+        <div class="code">
+      source venv/bin/activate
+    </div>
+    <div class="description">
+      This is how you activate a virtual environment, now you can start using it
+    </div>
+            <div class="code">
+      pip install re
+    </div>
+    <div class="description">
+      This is how you activate a virtual environment, now you can start using it
+    </div>
+                <div class="code">
+      nano .gitignore
+    </div>
+    <div class="description">
+      If you haven\'t already, make sure to add your venv to gitignore
+    </div>
+  </body>
+
+</html>
