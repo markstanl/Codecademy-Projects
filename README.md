@@ -2,7 +2,7 @@
 As a pro user of Codecademy, I am often required to make a project to move on with the course. This repository contains 
 all of my coded projects, in multiple fields. There are likely multiple courses in each src folder, so dive in. 
 
-# (Completed Courses)[https://www.codecademy.com/profiles/markstanl]
+# ![Completed Courses](https://www.codecademy.com/profiles/markstanl)
 ### Frontend
 - Learn Javascript
 - Learn Typescript
