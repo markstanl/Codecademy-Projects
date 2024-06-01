@@ -24,7 +24,7 @@ There are many ways to use Codecademy, career paths are comprehensive guides to 
 These are the courses I am currently enrolled in, roughly ranked in order of importance
 - Learn Data Analysis with Pandas ![](https://geps.dev/progress/45)
 - Learn Next.js ![](https://geps.dev/progress/16)
-- Create a Front-End App with React ![](https://geps.dev/progress/83)
+- Create a Front-End App with React ![](https://geps.dev/progress/93)
 
 
 
