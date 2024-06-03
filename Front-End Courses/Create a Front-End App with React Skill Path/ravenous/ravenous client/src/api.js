@@ -1,4 +1,4 @@
-const apiKey = '0t1-zeOa1rRqZ8-L9TlFnno48kXeKu3M-DkekVQb0aO-3gH63H9sNLs-53OMBglC7-wWTw4lrdUNtTMfBbakJzkiIO3-4wf7T-5qnxbArulAgNfJj4P2x6xvR5pcZnYx'
+const apiKey = 'api_key_here'
 const yelpBaseURL = 'http://localhost:3001/api/'
 
 
