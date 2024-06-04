@@ -1,8 +1,8 @@
 # Codecademy Projects
 As a pro user of Codecademy, I am often required to make a project to move on with the course. This repository contains 
 all of my coded projects, in multiple fields. There are likely multiple courses in each src folder, so dive in. 
-Each main directory is either a Courses folder, or a career path folder. The career paths are the 
-large job-training courses, which each warrent their own directory. The course folders all filled
+Each main directory is either a Courses folder or a career path folder. The career paths are the 
+large job-training courses, which each warrant their own directory. The course folders are all filled
 with all the smaller courses that teach me a specific skill in the wider coding world.
 
 # ![Completed Courses](https://www.codecademy.com/profiles/markstanl)
@@ -12,8 +12,8 @@ with all the smaller courses that teach me a specific skill in the wider coding 
 - Learn React
 - Introduction to UI and UX Design
 
-### Data Analysis
-- 
+### Data Analysis / Python
+- Learn Web Scraping with Beautiful Soup
 
 ### Machine Learning
 - Machine Learning: Introduction with Regression
