@@ -25,7 +25,7 @@ There are many ways to use Codecademy, career paths are comprehensive guides to 
 
 # Current Courses/ Skill Paths   
 These are the courses I am currently enrolled in, roughly ranked in order of importance
-- Learn Data Analysis with Pandas ![](https://geps.dev/progress/45)
+- Learn Data Analysis with Pandas ![](https://geps.dev/progress/72)
 - Learn Next.js ![](https://geps.dev/progress/16)
 - Create a Front-End App with React ![](https://geps.dev/progress/97)
 
