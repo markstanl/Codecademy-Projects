@@ -98,10 +98,11 @@ df['binned_data`] = pd.cut(df['data'], bins, right=False)
 ```
 
 ## Natural Log Transformation
-Natural log transformations are useful with very right-skewed data with large outliers. A log transformation is pretty easy, and we can just us NumPy.
+Natural log transformations are useful with very right-skewed data with large outliers. A log transformation is pretty easy, and we can just use NumPy.
 ```Python
 data = df['data']
 log_data = np.log(data)
 ```
-
+## Regression vs. Classification
+Regression is used for predicting outputs that are continuous numbers, like predicting the height of someone based on their caloric intake. Linear regression is the most popular version of this. On the other hand, classification is used when predicting which group an input should land in like predicting if a camera is sensing a human or an animal. Multi-label classification allows for multiple responses if needed. Like if there is a human and an animal in an image, it could clarify that. 
 
