@@ -62,4 +62,46 @@ data_scaled = scaler.fit_transform(data_reshaped_
 ```
 This standardizes the stored data. 
 
+## Min-Max Normalization
+Min-maxxing is another form of data normalization, which involves finding the minimum and maximum data values from a set and setting each to 0 and 1 respectively.
+Every other piece of data follows by transforming to a value in-between 0 and 1 based on the distance from the min and max values.  
+Formally:
+$X_{norm} = \dfrac{X - X_{min}}{X_{max} - X_{min}}$  
+It is important to note, this does not work well with data that has extreme outliers.
+```Python
+data = df['data']
+min_data = np.min(data)
+max_data = np.max(data)
+data_normalized = (data - min_data) / (max_data - min_data)
+```
+## Min-Max Normalization with Sklearn
+Using Sklearn, everything can be faster
+```Python
+from sklearn.preprocessing import MinMaxScaler
+mmscaler = MinMaxScaler()
+```
+We perform the same reshaping method on our data and use the same fit_transform method on the reshaped data, now just with the mmscaler instead of the standardization.
+```Python
+data = df['data']
+reshaped_data = np.array(data).reshape(-1,1)
+data_normalized = mmscaler.fit_transform(reshaped_data)
+```
+
+## Binning Data
+Binning data groups the data into specific 'bins' to capture patterns in noisy data. To bin our data, we start by making a list of our upper boundaries, exclusive (If we know the max, like 8, make the upper boundary 8.1 to include the max value).
+```Python
+bins = [0, 10, 20, 30, 40, 50.1]  # 40 <= data < 50.1
+```
+We use the following command pd.cut() to put all of the selected data into the correct bins
+```Python
+df['binned_data`] = pd.cut(df['data'], bins, right=False)
+```
+
+## Natural Log Transformation
+Natural log transformations are useful with very right-skewed data with large outliers. A log transformation is pretty easy, and we can just us NumPy.
+```Python
+data = df['data']
+log_data = np.log(data)
+```
+
 
