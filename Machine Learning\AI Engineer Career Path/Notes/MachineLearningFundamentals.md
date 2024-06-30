@@ -24,3 +24,42 @@ some_data = df['some_data']  # Take some series of data
 mean_data = some_data.mean()  # Find the mean of the data
 centered_data = some_data - mean_data  # Center the data 
 ```
+
+## Standardization (Z-Score Normalization)
+Standardization is when you center the data, and then divide it by the standard deviation, making the standard deviation to become 1, with a mean of 0.
+Performing this on all data makes it so that all data is normalized and on the same scale.   
+This is important before doing any of the following:
+- Before Principal Component Analysis
+- Before using any clustering or distance-based algorithm (think KMeans or DBSCAN)
+- Before KNN
+- Before performing regularization methods like LASSO and Ridge
+For each value in the dataset, the following formula can be used to calculate the new value:
+- $z = \dfrac{value - mean}{stdev}$
+
+In Python, it would look like this:
+```Python
+data = data
+mean_data = np.mean(data)  # Take the mean
+std_dev_data = data.mean()  # Take the standard deviation
+# Can use np.mean(data), or df.mean() if it is a dataframe
+data_standardized = (data - mean_data) / std_dev_data
+```
+
+## Standardization with Sklearn
+We will be using Sklearn to do it a little quicker
+```Python
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+```
+First, we convert the data into a NumPy array, and then reshape it into a 2D Array, so something like this
+```Python
+data_reshaped = np.array(data).reshape(-1,1) 
+```
+The -1 indicates inferring the length of the dimension of the array, while the 1 means to bring back 1 column.
+Then, we use a fit_transform method on the reshaped data to apply the Standardization from earlier
+```Python
+data_scaled = scaler.fit_transform(data_reshaped_
+```
+This standardizes the stored data. 
+
+
