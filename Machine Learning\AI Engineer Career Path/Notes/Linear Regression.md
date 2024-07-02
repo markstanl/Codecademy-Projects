@@ -86,4 +86,23 @@ b, m = step_gradient(months, revenue, b, m)
 print(b, m)
 print(calculate_loss(months, revenue, b, m))\
 ```
-This may seem a little daunting, but running this algorithm will show you that loss decreases after each step iteration
+This may seem a little daunting, but running this algorithm will show you that loss decreases after each step iteration. Keep in mind, that this only gives a good estimation of what the "best" values for m and b should be.
+Here is a visualization of what happens on a 3d graph using this algorithm.
+![image](https://github.com/markstanl/Codecademy-Projects/assets/146277800/589ef3d9-bd1e-4bee-acb6-5a5a990fba43)
+
+
+## Learning Rate
+The learning rate is that constant multiplied by the gradient to move through the descent. It is possible to calculate the derivative and find the specific minima, but in practice, especially with larger models and datasets, calculating such will be costly and less efficient, so we need to know how to find a good learning rate. This is what could happen if the learning rate is too large 
+![image](https://github.com/markstanl/Codecademy-Projects/assets/146277800/de37c5d3-0cb8-4fcf-bb96-58184ca0d0d6)
+
+## Putting it All Together
+Using all of the algorithms from before, using gradient descent gives us a good way of finding really good estimations of what the best m and b are.
+
+## With Scikit-Learn
+```Python
+from sklearn.linear_model import LinearRegression
+line_fitter = LinearRegression()
+line_fitter.fit(X, y)
+```
+Using Scikit-Learn speeds up these algorithms by quite a bit. This single line of code has the number of iterations, and a learning rate built in, which are editable for optimization.
+
