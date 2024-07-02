@@ -104,5 +104,72 @@ from sklearn.linear_model import LinearRegression
 line_fitter = LinearRegression()
 line_fitter.fit(X, y)
 ```
-Using Scikit-Learn speeds up these algorithms by quite a bit. This single line of code has the number of iterations, and a learning rate built in, which are editable for optimization.
+Using Scikit-Learn speeds up these algorithms by quite a bit. This single line of code has a number of iterations, and a learning rate built in, which are editable for optimization.
 
+# Multiple Linear Regression
+It is often the case that linear regression will not just simply be used on two variables, but rather a lot more. I will be summarizing the math behind multiple linear regression. Initially, the y value of a dataset can be estimated using a similar fashion, of data from set x
+
+$$\hat{y}=\sum_{x\in{X}}x_i\beta_i=\beta_o+\beta_1x_1+\beta_2x_2+\ldots+\beta_nx_n$$
+Loss is still calculated the same way, the squared difference of the actual and expected. Gradient descent can still be used to calculate these features.
+
+## Training Set vs. Test Set
+It is important to save a portion of your data to be used as the "Test Set." The point of this data is to check, at the very end, how good your training model did. It is good to keep about 20% of your dataset to be used as the test set, and 80% to be the training set. This can as always be done with scikit-learn.
+```Python
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_size=0.2)
+```
+
+## Using SciKit-Learn
+Multiple linear regression, though tricky to do math on, is quite easy to implement with SciKit-Learn. Consider the following example:
+```Python
+import codecademylib3_seaborn
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+
+streeteasy = pd.read_csv("https://raw.githubusercontent.com/sonnynomnom/Codecademy-Machine-Learning-Fundamentals/master/StreetEasy/manhattan.csv")
+
+df = pd.DataFrame(streeteasy)
+
+x = df[['bedrooms', 'bathrooms', 'size_sqft', 'min_to_subway', 'floor', 'building_age_yrs', 'no_fee', 'has_roofdeck', 'has_washer_dryer', 'has_doorman', 'has_elevator', 'has_dishwasher', 'has_patio', 'has_gym']]
+
+y = df[['rent']]
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, train_size = 0.8, test_size = 0.2, random_state=6)
+
+# Add the code here:
+
+mlr = LinearRegression()
+mlr.fit(x_train, y_train)
+
+y_predict = mlr.predict(x_train)
+
+sonny_apartment = [[1, 1, 620, 16, 1, 98, 1, 0, 1, 0, 0, 1, 1, 0]]
+
+predict = mlr.predict(sonny_apartment)
+
+print("Predicted rent: $%.2f" % predict)
+```
+First, get the pandas Dataframes, y should only be a single variable, but X can be as many as you want. And then, just train it! You can make a dummy example to check the predictions, and test all of the testing data. It is beneficial to graph the difference between the predicted and actual values on the test dataset (and use linear regression on the two variable graph to see how well you did).   
+![image](https://github.com/markstanl/Codecademy-Projects/assets/146277800/6f37f68c-a18f-4127-b07c-17cb558fcc79)
+Furthermore, you can score your dataset with the following commands. You typically want high, and similar scores between 0 and 1.
+```Python
+linear_regression = LinearRegression()
+linear_regression.fit(x_train, y_train)
+
+train_score = linear_regression.score(x_train, y_train)
+test_score = linear_regression.score(x_test, y_test)
+```
+
+## Preprocessing Multiple Datapoints
+It is important to only use data that has an obvious linear correlation. You can do this by graphing the two variables, and seeing if there is an strong correlation between the variables. After getting a dataframe, you can perform the following operations to see the correlation between variables.
+```Python
+data = pd.read_csv("data.csv")
+
+plt.scatter(df[['possible_x_variable']], df[['y_variable']], alpha=0.4)
+plt.show()
+```
