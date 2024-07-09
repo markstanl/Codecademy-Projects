@@ -22,10 +22,28 @@ np.exp(log_odds)/(1+ np.exp(log_odds)) # To make them probability, we apply the 
 ```
 The intercept and coeficient come from the logit function, which converts the log line to a linear line, and puts all 0 values at -$\infty$ and 1 values at $\infty$.
 This graph has the log odds on the y axis, with the exact same values on the x axis. This is where the line of best fit is calculated. 
-Thus, to reverse the logit function we get from the log odds, we apply that np probability converter.
+Thus, we apply that np probability converter to reverse the logit function we get from the log odds.
 Instead of that function, we can easily predict any group with the .predict() method. If we want to predict probabilities, we can use predict_proba()
 ```Python
 print(model.predict(features)) # Ex. output [0, 1, 1, 0, 1]
 print(model.predict_proba(features)) # Ex output [0.25, 0.78, 0.98, 0.02]
 ```
 Where the input is a matrix of features and the output is each individual data's prediction of being in the group. 
+
+## Classification Threshold
+As we know, the goal of Logistic Regression is to make predictions on if some data belongs in some group, based on the probability likelihood it belongs in that group.
+Usually, 0.5 is a good threshold, and the sci-kit default, but this is not always the case. For example, in a court of law, you may want a greater likelihood.
+
+## Confusion Matrix
+After creating a model, we need to evaluate it, this can be done using a confusion matrix. We use the standard train data to train the model, and then predict
+some test data. This should give us something like Y_pred = [0, 1, 0] and Y_test = [0, 1, 1]. A confusion matrix condenses the correct guess into a matrix, of
+True positives, false positives, true negatives, false negatives. This can easily be done with sklearn.
+
+$$\begin{bmatrix}
+1{true} & 1{false}\\
+0{true} & 0{false}
+\end{bmatrix}$$
+```Python
+from sklearn.metrics import confusion_matrix
+confusion_matrix(y_pred, y_actl)
+```
