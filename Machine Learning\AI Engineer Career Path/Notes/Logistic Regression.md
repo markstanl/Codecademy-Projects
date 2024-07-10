@@ -40,10 +40,12 @@ some test data. This should give us something like Y_pred = [0, 1, 0] and Y_test
 True positives, false positives, true negatives, false negatives. This can easily be done with sklearn.
 
 $$\begin{bmatrix}
-1{true} & 1{false}\\
-0{true} & 0{false}
+0{true} & 1{false}\\
+0{false} & 1{true}
 \end{bmatrix}$$
 ```Python
 from sklearn.metrics import confusion_matrix
 confusion_matrix(y_pred, y_actl)
 ```
+These can give us a few good ways to calculate the error. We need multiple because each one individually can be gamed. They are as follows
+$$Accuracy = \frac{TP+TN}{TP+FP+TN+FN},  Precision = \frac{TP}{TP+FP},  Recall = \frac{TP}{TP+FN}$$
