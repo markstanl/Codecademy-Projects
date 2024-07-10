@@ -20,7 +20,7 @@ Then, we can figure out the probability of any event. Again, this is really easy
 log_odds = model.intercept_ + model.coef_ * data_x 
 np.exp(log_odds)/(1+ np.exp(log_odds)) # To make them probability, we apply the following operation
 ```
-The intercept and coeficient come from the logit function, which converts the log line to a linear line, and puts all 0 values at -$\infty$ and 1 values at $\infty$.
+The intercept and coeficient come from the logit function, which converts the log line to a linear line, and puts all 0 values at $-\infty$ and 1 values at $\infty$.
 This graph has the log odds on the y axis, with the exact same values on the x axis. This is where the line of best fit is calculated. 
 Thus, we apply that np probability converter to reverse the logit function we get from the log odds.
 Instead of that function, we can easily predict any group with the .predict() method. If we want to predict probabilities, we can use predict_proba()
