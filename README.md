@@ -22,7 +22,7 @@ with all the smaller courses that teach me a specific skill in the wider coding 
 # Current Career Paths  
 There are many ways to use Codecademy, career paths are comprehensive guides to landing a position in the field. Here is what I'm taking.
 - Full-Stack Engineer![](https://geps.dev/progress/24)
-- Machine Learning/AI Engineer![](https://geps.dev/progress/7)
+- Machine Learning/AI Engineer![](https://geps.dev/progress/15)
 
 # Current Courses/ Skill Paths   
 These are the courses I am currently enrolled in, roughly ranked in order of importance
