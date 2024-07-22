@@ -19,4 +19,22 @@ There are other distances, but seeing them all is unnecessary.
 This is a step we understand, they had me do min-maxing. This is obviously a necessary step as the range for some numbers might vary heavily, while others don't (a boolean vs say yearly income)
 
 # K-nearest neighbors
-The name k-nearest neighbors is aptly named, the algorithm will find k elements that are closest in distance to some data point. 
+The name k-nearest neighbors is aptly named, the algorithm will find k elements that are closest in distance to some data point. This is calculated via calculating the distance to every value, sorting it, and returning the k lowest distances. This is inefficient but can be sped up with some other implementations. An implementation of this could look like:
+```Python
+def distance(movie1, movie2):
+  squared_difference = 0
+  for i in range(len(movie1)):
+    squared_difference += (movie1[i] - movie2[i]) ** 2
+  final_distance = squared_difference ** 0.5
+  return final_distance
+
+def find_neighbors(unknown, dataset, k):
+  distances = []
+  for title in dataset:
+    # appends the list with the distance and the title of that distance
+    distances.append([distance(dataset[title], unknown), title])
+  distances.sort()
+  neighbors = distances[:k]
+  return neighbors
+```
+Finally, the algorithm needs to predict what group something should be a part of. 
