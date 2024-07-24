@@ -11,6 +11,7 @@ with all the smaller courses that teach me a specific skill in the wider coding 
 - Learn Typescript
 - Learn React
 - Introduction to UI and UX Design
+- Create a Front-End App with React ([Portfolio Project](https://github.com/markstanl/spotifai))
 
 ### Data Analysis / Python
 - Learn Data Analysis with Pandas
@@ -27,7 +28,6 @@ There are many ways to use Codecademy, career paths are comprehensive guides to 
 # Current Courses/ Skill Paths   
 These are the courses I am currently enrolled in, roughly ranked in order of importance
 - Learn Next.js ![](https://geps.dev/progress/16)
-- Create a Front-End App with React ![](https://geps.dev/progress/97)
 
 
 
