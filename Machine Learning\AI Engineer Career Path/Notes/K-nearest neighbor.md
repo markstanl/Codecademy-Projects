@@ -55,5 +55,7 @@ guesses = classifier.predit(test_set)
 ```
 
 # Classification vs Regression
-We have thus far been doing KNN with classification, where we just find the most popular classification of the neighbors and pick the most common classifier. As opposed to this, KNN with regression tries to predict a continuous value. 
+We have thus far been doing KNN with classification, where we just find the most popular classification of the neighbors and pick the most common classifier. As opposed to this, KNN with regression tries to predict a continuous value. This is done by simply computing the average, or, a weighted average, where closer neighbors have a higher affect on the final value. This can be the following:  
+$$\frac{\frac{N_{value}}{N_{distance}}}{\frac{1}{N_{distance}}}$$  
+where N is the set of neighbors
 
