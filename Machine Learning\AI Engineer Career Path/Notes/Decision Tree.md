@@ -16,6 +16,11 @@ This can be calculated with the following formula:
 $$1-(p_1^2+p_2^2)$$ or $$1-\sum^{C}p_i^2$$ 
 The numbers range from 0, best, to 0.5, worst.
 
+## How Decision Trees are Built
+It seems clear that splitting trees at different locations may result in different types of trees, with differing impurities. What is the best way to make a tree?
+It is quite simple actually, simply calculate the weighted impurity of splitting on a specific feature, and picking the one that gives the lowest weighted impurity.
+Thus, recursively, you can use the formula to figure out what the best split is, and then compute the best following split. 
+
 
 
 
