@@ -33,7 +33,7 @@ On your first iteration, include all features
 4. Repeat on that feature set
 
 ## Recursive Feature Elimination
-The process is essentially the same as Backward Selection, except it judges based on the univariate coefficients. 
+The process is essentially the same as backward selection, except it is judged based on the univariate coefficients, instead of the overall score of the model without that feature. So, for example, when removing something from {A, B, C, D}, RFE will just score each feature and remove the worst one, while SBS will score all 4 subsets, and pick the best out of that. 
 
 # Implementation with mlxtend and sklearn
 mltend eases up the process quite a bit.
