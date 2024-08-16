@@ -35,7 +35,7 @@ On your first iteration, include all features
 ## Recursive Feature Elimination
 The process is essentially the same as Backward Selection, except it judges based on the univariate coefficients. 
 
-# Implementation with mlxtend
+# Implementation with mlxtend and sklearn
 mltend eases up the process quite a bit.
 ```Python
 from mlxtend.feature_selection import SequentialFeatureSelector as SFS
@@ -48,6 +48,19 @@ sfs = SFS(lr,
            cv=0)
 # Fit SFS to our features X and outcome y   
 sfs.fit(X, y)
+print(sfs.subsets_) # prints the fitting after n iterations
+plot_sfs(sfs.get_metric_dict())
+plt.show() # graphs the performance against the number of features
 ```
-It is important to note X and y are features here, not entire DataFrames.
+It is important to note X contains all of the features, and y is the predictor. 
+### Recursive Feature Elimination
+For recursive feature elimination, we can just use sklearn.
+```Python
+from sklearn.feature_selection import RFE
+
+model = ModelConstructor()
+rfe = RFE(model, n_features_to_select=3)
+rfe.fit(X, y)
+```
+
 
