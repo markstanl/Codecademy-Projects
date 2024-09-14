@@ -19,6 +19,7 @@ with all the smaller courses that teach me a specific skill in the wider coding 
 
 ### Machine Learning
 - Machine Learning: Introduction with Regression
+- Intro to PyTorch and Neural Networks
 
 # Current Career Paths  
 There are many ways to use Codecademy, career paths are comprehensive guides to landing a position in the field. Here is what I'm taking.
