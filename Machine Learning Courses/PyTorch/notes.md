@@ -79,4 +79,34 @@ MSE.backward()
 # apply the optimizer to update weights and biases
 optimizer.step()
 ```
+That is how training works, very simply. This will update the weights based on the predictions. 
 
+## Epochs
+Now, to actually apply this, we run the training multiple times with multiple epochs (training sets). This is what an epoch looks like with torch.
+```Python
+num_epochs = 1000
+for epoch in range(num_epochs):
+    predictions = model(X) # forward pass
+    MSE = loss(predictions,y) # compute loss
+    MSE.backward() # compute gradients
+    optimizer.step() # update weights and biases
+    optimizer.zero_grad() # reset the gradients for the next iteration
+```
+
+## Evaluation and Saving
+Of course, it is useful to evaluate the quality of our networks. But, it is also important to save them as training can take a long time.
+To evaluate:
+```Python
+model.eval()
+with torch.no_grad():
+    predictions = model(X_test)
+    test_MSE = loss(predictions, y_test)
+```
+To save:
+```Python
+# save the neural network to a specified path
+torch.save(model, 'model.pth')
+
+# load the saved neural network from the specified path
+loaded_model = torch.load('model.pth')
+```
