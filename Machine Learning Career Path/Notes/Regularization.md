@@ -19,3 +19,16 @@ Also note that this is note a graph of the model, but of the coeffecients of a m
 ![maxresdefault](https://github.com/user-attachments/assets/e6cb879d-ff16-49e5-a8d5-0844b659e84a)
 Consider the red area on the right of the image, that is the square of constraint.
 We then look at the point that minimizes the loss function, while being in the regularization parameters, and pick that as our new best model!
+
+# L2 Regularization
+L2 regularization is also called ridge regularization.
+Again consider a 2-feature model. This gives us $b_1^2 +b_2^2$, which can be confined to some value s^2, such that $b_1^2 +b_2^2 \leq s^2$
+The main difference with this formula is that this model can be confined to a circle (you all know that formula).
+
+Consider again the image from earlier. The algorithm will minimize the loss function while containing it within that circle.
+
+# Hyperparameter Tuning
+Scary words. alpha is considered a hyperparameter, as it is not "learned" by the model, we must pick it before tuning.
+Alpha was the term multiplied by the regularization value.
+Furthermore, alpha constrains the possible values of s, they are inversely related.
+
